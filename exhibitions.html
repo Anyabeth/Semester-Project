@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Science Museum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo"><a href="index.html">COMMUNITY SCIENCE MUSEUM</a></div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="visit.html">Visit</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="exhibitions-page">
+        <section class="banner">
+            <h1 class="center-text">OUR EXHIBITS</h1>
+            <div class="gallery">
+                <div class="gallery-item" style="background-image: url('pictures/hall1.jpg');">
+                    <div class="overlay">
+                        <h3>Ecology</h3>
+                        <p>As we learn more and more of the impact humans are having on the planet, the more important
+                            it becomes that scientists explore how to create a sustainable future not just for humans
+                            but for the whole planet.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background-image: url('pictures/dinosaur5.jpg');">
+                    <div class="overlay">
+                        <h3>Evolution</h3>
+                        <p>For centuries, philosophers and scientists have wrestled with the question of our origins.
+                            Where do we come from and how did we get here? Since Darwin proposed his theory of evolution
+                            we have had a framework for exploring and understanding our place in this world.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background-image: url('pictures/child1.jpg');">
+                    <div class="overlay">
+                        <h3>Robotics and AI</h3>
+                        <p>The information revolution is here and robotics and artificial intelligence are the science
+                            of the future. From useful home applications of AI to industrial uses of robotics, the
+                            future is here. You can even say hello and shake the hand of Rob the Robot.</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background-image: url('pictures/statue1.jpg');">
+                    <div class="overlay">
+                        <h3>Biology and Medicine</h3>
+                        <p>For many people their life expectancy is much longer and their quality of life much improved,
+                            thanks to the growth of our understanding of medicine. Over a series of exhibits we explore
+                            the history of medicine and take a look at some major breakthroughs including the discovery
+                            of penicillin and the first heart transplant.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>2023 Your Museum Name. All rights reserved.</p>
+    </footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menu = document.querySelector('.menu');
+
+        mobileMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+
+<script>
+    // Select all the gallery overlay elements
+    const overlays = document.querySelectorAll('.overlay');
+
+    // Add event listener to each gallery overlay
+    overlays.forEach(overlay => {
+        let touchCount = 0; // Initialize touch count
+        let touchStartTime = 0; // Store touch start time
+        const doubleTapThreshold = 300; // Threshold for detecting double tap (in milliseconds)
+
+        // Toggle the 'active' class on double tap
+        overlay.addEventListener('touchstart', event => {
+            // Prevent default touch behavior
+            event.preventDefault();
+
+            const currentTime = new Date().getTime();
+
+            if (touchCount === 0) {
+                touchCount = 1;
+                touchStartTime = currentTime;
+
+                setTimeout(() => {
+                    if (touchCount === 1) {
+                        // If a single tap occurred, show the overlay
+                        overlay.classList.add('active');
+                    }
+                    touchCount = 0; // Reset touch count
+                }, doubleTapThreshold);
+            } else if (touchCount === 1 && (currentTime - touchStartTime) <= doubleTapThreshold) {
+                // If a second tap occurred within the threshold, hide the overlay
+                overlay.classList.remove('active');
+                touchCount = 0; // Reset touch count
+            }
+        });
+    });
+</script>
+</body>
+</html>

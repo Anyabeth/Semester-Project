@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Science Museum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo"><a href="index.html">COMMUNITY SCIENCE MUSEUM</a></div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="visit.html">Visit</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="cards-wrapper">
+        <div class="card">
+            <img src="pictures/ticket1.jpg" class="card-img-top">
+            <div class="card-body">
+                <h2 class="card-title">Admission</h2>
+                <p class="card-text">The entrance is free for all.</p>
+                <p>There are guided tours of the museum that leave every hour. These tours are 70 NOK per person and
+                    include a handy
+                    printed guide of the museum.</p>
+                <p>If you would like to organise a guided tour for your group of 6 or more people, please contact us to
+                    arrange the
+                    tour.</p>
+            </div>
+        </div>
+        <div class="card d-none d-md-block">
+            <img src="pictures/food1.jpg" class="card-img-top">
+            <div class="card-body">
+                <h2 class="card-title">Food & Drinks</h2>
+                <p class="card-text">There is a café attached to the museum where you can get light lunches, soft
+                    drinks, coffee, snacks and more.</p>
+            </div>
+        </div>
+        <div class="card d-none d-md-block">
+            <img src="pictures/open1.jpg" class="card-img-top">
+            <div class="card-body">
+                <h2 class="card-title">Hours</h2>
+                <p class="card-text">
+                <p>Monday: Closed</p>
+                <p>Tuesday: 10:00 – 16:00</p>
+                <p>Wednesday: 10:00 – 16:00</p>
+                <p>Thursday: 10:00 – 16:00</p>
+                <p>Friday: 10:00 – 19:00</p>
+                <p>Saturday: 9:00 – 16:00</p>
+                <p>Sunday: 9:00 – 13:00</p>
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>2023 Your Museum Name. All rights reserved.</p>
+    </footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menu = document.querySelector('.menu');
+
+        mobileMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Science Museum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="logo"><a href="index.html">COMMUNITY SCIENCE MUSEUM</a></div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="exhibitions.html">Exhibitions</a></li>
+                    <li><a href="visit.html">Visit</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="about-page">
+        <p class="about-us-text">ABOUT US</p>
+        <div class="about-cards-wrapper">
+            <div class="about-card">
+                <img src="pictures/museumlookout1.jpg" alt="Image 1" class="about-image">
+                <div class="about-card-body">
+                    <h2 class="about-card-title">Support</h2>
+                    <p class="about-card-text">There are various ways you can support the museum. Donations are very
+                        welcome and are an important way we keep this museum open and accessible to the whole community.
+                    </p>
+                </div>
+            </div>
+            <div class="about-card">
+                <img src="pictures/astronaut1.jpg" alt="Image 2" class="about-image">
+                <div class="about-card-body">
+                    <h2 class="about-card-title">Volunteer</h2>
+                    <p class="about-card-text">A number of people volunteer their time and effort to keep the displays
+                        in good order and ready for visitors to come and enjoy.</p>
+                </div>
+            </div>
+            <div class="about-card">
+                <img src="pictures/moonphase1.jpg" alt="Image 3" class="about-image">
+                <div class="about-card-body">
+                    <h2 class="about-card-title">hello</h2>
+                    <p class="about-card-text">A number of people volunteer their time and effort to keep the displays
+                        in good order and ready for visitors to come and enjoy.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>2023 Community Science Museum. All rights reserved.</p>
+    </footer>
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menu = document.querySelector('.menu');
+        mobileMenu.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

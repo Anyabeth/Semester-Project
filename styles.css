@@ -155,7 +155,7 @@ body {
     display: inline-block;
     padding: 0.9rem 1.5rem;
     background-color: #db662f;
-    color: #fff5f5;
+    color: #000000;
     text-decoration: none;
     border-radius: 1.5rem;
     margin-right: 1rem;
@@ -845,7 +845,6 @@ nav a {
 }
 
 
-
 /* footer */
 
 footer {
@@ -858,3 +857,4 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+

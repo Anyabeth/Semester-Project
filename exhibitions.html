@@ -33,7 +33,7 @@
             <div class="gallery">
                 <div class="gallery-item" style="background-image: url('pictures/hall1.jpg');">
                     <div class="overlay">
-                        <h3>Ecology</h3>
+                        <h2>Ecology</h2>
                         <p>As we learn more and more of the impact humans are having on the planet, the more important
                             it becomes that scientists explore how to create a sustainable future not just for humans
                             but for the whole planet.</p>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="gallery-item" style="background-image: url('pictures/child1.jpg');">
                     <div class="overlay">
-                        <h3>Robotics and AI</h3>
+                        <h4>Robotics and AI</h4>
                         <p>The information revolution is here and robotics and artificial intelligence are the science
                             of the future. From useful home applications of AI to industrial uses of robotics, the
                             future is here. You can even say hello and shake the hand of Rob the Robot.</p>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="gallery-item" style="background-image: url('pictures/statue1.jpg');">
                     <div class="overlay">
-                        <h3>Biology and Medicine</h3>
+                        <h5>Biology and Medicine</h5>
                         <p>For many people their life expectancy is much longer and their quality of life much improved,
                             thanks to the growth of our understanding of medicine. Over a series of exhibits we explore
                             the history of medicine and take a look at some major breakthroughs including the discovery
@@ -69,28 +69,33 @@
     <footer>
         <p>2023 Community Science Museum. All rights reserved.</p>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menu = document.querySelector('.menu');
 
-        mobileMenu.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
+    <button id="scroll-up" class="scroll-button">▲</button>
+    <button id="scroll-down" class="scroll-button">▼</button>
 
-<script>
-    // Select all the gallery overlay elements
+ <script>
+    const currentPage = window.location.href;
+    const menuLinks = document.querySelectorAll('.menu li a');
+    menuLinks.forEach(link => {
+        if (currentPage.endsWith(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.menu');
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+ </script>
+
+ <script>
     const overlays = document.querySelectorAll('.overlay');
-
-    // Add event listener to each gallery overlay
     overlays.forEach(overlay => {
-        let touchCount = 0; // Initialize touch count
-        let touchStartTime = 0; // Store touch start time
-        const doubleTapThreshold = 300; // Threshold for detecting double tap (in milliseconds)
+        let touchCount = 0; 
+        let touchStartTime = 0; 
+        const doubleTapThreshold = 300; 
 
-        // Toggle the 'active' class on double tap
         overlay.addEventListener('touchstart', event => {
-            // Prevent default touch behavior
             event.preventDefault();
 
             const currentTime = new Date().getTime();
@@ -101,18 +106,40 @@
 
                 setTimeout(() => {
                     if (touchCount === 1) {
-                        // If a single tap occurred, show the overlay
                         overlay.classList.add('active');
                     }
-                    touchCount = 0; // Reset touch count
+                    touchCount = 0; 
                 }, doubleTapThreshold);
             } else if (touchCount === 1 && (currentTime - touchStartTime) <= doubleTapThreshold) {
-                // If a second tap occurred within the threshold, hide the overlay
                 overlay.classList.remove('active');
-                touchCount = 0; // Reset touch count
+                touchCount = 0; 
             }
         });
     });
+ </script>
+
+ <script>
+    const scrollUpButton = document.getElementById('scroll-up');
+    const scrollDownButton = document.getElementById('scroll-down');
+
+    scrollUpButton.addEventListener('click', () => {
+        window.scrollBy(0, -window.innerHeight);
+    });
+
+    scrollDownButton.addEventListener('click', () => {
+        window.scrollBy(0, window.innerHeight);
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            scrollUpButton.style.display = 'block';
+            scrollDownButton.style.display = 'block';
+        } else {
+            scrollUpButton.style.display = 'none';
+            scrollDownButton.style.display = 'none';
+        }
+    });
 </script>
+
 </body>
 </html>

@@ -36,15 +36,21 @@
     <footer>
         <p>2023 Community Science Museum. All rights reserved.</p>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menu = document.querySelector('.menu');
+ <script>
+    const currentPage = window.location.href;
+    const menuLinks = document.querySelectorAll('.menu li a');
+    menuLinks.forEach(link => {
+        if (currentPage.endsWith(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.menu');
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+ </script>
 
-        mobileMenu.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
 
 </body>
-
 </html>

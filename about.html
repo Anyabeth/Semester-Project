@@ -33,7 +33,7 @@
             <div class="about-card">
                 <img src="pictures/museumlookout1.jpg" alt="Image 1" class="about-image">
                 <div class="about-card-body">
-                    <h2 class="about-card-title">Support</h2>
+                    <h1 class="about-card-title">Support</h1>
                     <p class="about-card-text">There are various ways you can support the museum. Donations are very
                         welcome and are an important way we keep this museum open and accessible to the whole community.
                     </p>
@@ -50,7 +50,7 @@
             <div class="about-card">
                 <img src="pictures/moonphase1.jpg" alt="Image 3" class="about-image">
                 <div class="about-card-body">
-                    <h2 class="about-card-title">Shaping the Future</h2>
+                    <h3 class="about-card-title">Shaping the Future</h3>
                     <p class="about-card-text">As stewards of history and culture, we take our responsibility seriously. Our conservation efforts ensure that the
                     treasures we house remain intact for generations to come.</p>
                 </div>
@@ -60,13 +60,20 @@
     <footer>
         <p>2023 Community Science Museum. All rights reserved.</p>
     </footer>
-    <script>
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menu = document.querySelector('.menu');
-        mobileMenu.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
-    </script>
-</body>
+ <script>
+    const currentPage = window.location.href;
+    const menuLinks = document.querySelectorAll('.menu li a');
+    menuLinks.forEach(link => {
+        if (currentPage.endsWith(link.getAttribute('href'))) {
+            link.classList.add('active');
+        }
+    });
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menu = document.querySelector('.menu');
+    mobileMenu.addEventListener('click', () => {
+        menu.classList.toggle('active');
+    });
+ </script>
 
+</body>
 </html>

@@ -45,6 +45,12 @@ body {
     display: block;
 }
 
+/* Active page styling */
+.navbar .menu li a.active {
+    color: #ff7b00;
+    font-weight: bold;
+}
+
 /* Hamburger menu */
 @media (max-width: 1024px) {
     .menu-toggle {
@@ -79,6 +85,7 @@ body {
         padding-top: 120px;
     }
 }
+
 
 /* Adjustments for smaller screens like iPhone SE */
 @media (max-width: 977px) {
@@ -329,6 +336,10 @@ nav a {
         flex: 3;
     }
 
+    .overlay h2, .overlay h3, .overlay h4, .overlay h5 {
+        font-size: 1.5rem;
+    }
+
     .gallery-item {
         flex: 1;
         position: relative;
@@ -478,6 +489,28 @@ nav a {
     .logo a {
         font-size: 2rem;
     }
+
+
+ /* Style for scroll buttons */
+ .scroll-button {
+    position: fixed;
+    bottom: 9rem;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ff9100;
+    border: none;
+    padding: 0.3rem;
+    cursor: pointer;
+    z-index: 1000;
+ }
+
+ #scroll-up {
+    left: 21.5rem;
+ }
+
+ #scroll-down {
+    right: 21.5rem;
+ }
 
 }
 
@@ -843,6 +876,7 @@ nav a {
         position: relative;
     }
 }
+
 
 
 /* footer */

@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community Science Museum</title>
+    <title>Exhibitions page</title>
+        <meta name="description" content="This is the exhibitions page">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -85,7 +86,7 @@
     const menu = document.querySelector('.menu');
     mobileMenu.addEventListener('click', () => {
         menu.classList.toggle('active');
-    });
+    }); 
  </script>
 
  <script>
@@ -131,7 +132,7 @@
     });
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 5) {
             scrollUpButton.style.display = 'block';
             scrollDownButton.style.display = 'block';
         } else {

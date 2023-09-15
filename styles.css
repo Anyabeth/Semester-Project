@@ -719,8 +719,8 @@ nav a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
-    margin-top: 6rem;
+    padding: 5px;
+    margin-top: 5rem;
 }
 
 .about-card {

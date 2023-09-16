@@ -121,7 +121,7 @@ body {
 /* ... Index page ... */
 
 .index-page {
-    background-image: url('pictures/background3.jpg');
+    background-image: url('../pictures/background3.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

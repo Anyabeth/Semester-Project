@@ -146,7 +146,7 @@ body {
 
 .opening-soon-text {
     color: #f8f5f5;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     margin-top: 0;
 }
@@ -164,9 +164,17 @@ body {
     background-color: #db662f;
     color: #000000;
     text-decoration: none;
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     margin-right: 1rem;
     cursor: pointer;
+}
+
+.page-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 25px;
 }
 
 /* Small screens */

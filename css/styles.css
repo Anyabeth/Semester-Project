@@ -726,9 +726,10 @@ nav a {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     padding: 5px;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 170px;
 }
 
 .about-card {
@@ -755,7 +756,7 @@ nav a {
 }
 
 .about-card-body {
-    padding: 20px;
+    padding: 5px;
     text-align: left;
 }
 
@@ -769,6 +770,19 @@ nav a {
     font-size: 1.2rem;
     margin-bottom: 20px;
     color: #000000;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #000000;
+    color: #fff;
+    z-index: 3;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
 }
 
 /* Set a breakpoint for small screens */
@@ -808,6 +822,17 @@ nav a {
         font-size: 2rem;
     }
 
+    .footer {
+    text-align: center;
+    padding: 5rem;
+    background-color: #000000;
+    color: #fff;
+    z-index: 3;
+    position: fixed;
+    bottom: 2;
+    width: 100%;
+ }
+
 }
 
 /* Set a breakpoint for large screens */
@@ -817,13 +842,24 @@ nav a {
     }
 
     .about-image {
-        width: 20rem;
+        width: 40rem;
         height: 15rem;
     }
 
     .logo a {
         font-size: 2rem;
     }
+
+    footer {
+    text-align: center;
+    padding: 5rem;
+    background-color: #000000;
+    color: #fff;
+    z-index: 3;
+    position: fixed;
+    bottom: 2;
+    width: 100%;
+ }
 }
 
 /* Default screens (up to 768px) */
@@ -881,7 +917,9 @@ nav a {
         background-color: #000000;
         color: #fff;
         z-index: 3;
-        position: relative;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 }
 
@@ -899,3 +937,4 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+
